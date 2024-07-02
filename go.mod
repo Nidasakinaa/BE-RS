@@ -1,4 +1,4 @@
-module github.com/Nidasakinaa/BackendRS/BackendRS
+module github.com/Nidasakinaa/BackendRS
 
 go 1.22.1
 

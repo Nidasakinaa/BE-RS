@@ -4,10 +4,10 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Alamat struct {
-	Jalan   string `bson:"jalan,omitempty" json:"jalan,omitempty"`
-	Kota    string `bson:"kota,omitempty" json:"kota,omitempty"`
-	KodePos string `bson:"kodepos,omitempty" json:"kodepos,omitempty"`
+type Doctor struct {
+	Name      string `bson:"name,omitempty" json:"name,omitempty"`
+	Specialty string `bson:"specialty,omitempty" json:"specialty,omitempty"`
+	Contact   string `bson:"contact,omitempty" json:"contact,omitempty"`
 }
 
 type MedicalRecord struct {
@@ -19,14 +19,14 @@ type MedicalRecord struct {
 	Notes      string             `bson:"notes,omitempty" json:"notes,omitempty"`
 }
 
-type Pasien struct {
+type Biodata struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	FirstName     string             `bson:"firstName,omitempty" json:"firstName,omitempty"`
-	LastName      string             `bson:"lastName,omitempty" json:"lastName,omitempty"`
+	PasienName    string             `bson:"pasienName,omitempty" json:"pasienName,omitempty"`
 	Gender        string             `bson:"gender,omitempty" json:"gender,omitempty"`
 	TTL           string             `bson:"ttl,omitempty" json:"ttl,omitempty"`
 	Status        string             `bson:"status,omitempty" json:"status,omitempty"`
 	Phone_number  string             `bson:"phonenumber,omitempty" json:"phonenumber,omitempty"`
-	Alamat        Alamat             `bson:"alamat,omitempty" json:"alamat,omitempty"`
+	Alamat        string             `bson:"alamat,omitempty" json:"alamat,omitempty"`
+	Doctor        Doctor             `bson:"doctor,omitempty" json:"doctor,omitempty"`
 	MedicalRecord MedicalRecord      `bson:"medicalRecord,omitempty" json:"medicalRecord,omitempty"`
 }

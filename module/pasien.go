@@ -101,18 +101,18 @@ func UpdatePasien(ctx context.Context, db *mongo.Database, col string, _id primi
 	return nil
 }
 
-func DeletePasienByID(_id primitive.ObjectID, db *mongo.Database, col string) error {
-	pasien := db.Collection(col)
-	filter := bson.M{"id": _id}
+// func DeletePasienByID(_id primitive.ObjectID, db *mongo.Database, col string) error {
+// 	pasien := db.Collection(col)
+// 	filter := bson.M{"id": _id}
 
-	result, err := pasien.DeleteOne(context.TODO(), filter)
-	if err != nil {
-		return fmt.Errorf("error deleting data for ID %s: %s", _id, err.Error())
-	}
+// 	result, err := pasien.DeleteOne(context.TODO(), filter)
+// 	if err != nil {
+// 		return fmt.Errorf("error deleting data for ID %s: %s", _id, err.Error())
+// 	}
 
-	if result.DeletedCount == 0 {
-		return fmt.Errorf("data with ID %s not found", _id)
-	}
+// 	if result.DeletedCount == 0 {
+// 		return fmt.Errorf("data with ID %s not found", _id)
+// 	}
 
-	return nil
-}
+// 	return nil
+// }

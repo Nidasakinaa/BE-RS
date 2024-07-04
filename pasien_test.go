@@ -85,20 +85,20 @@ func TestInsertPasien(t *testing.T) {
 // 	fmt.Println("Data berhasil diupdate")
 // }
 
-func TestDeletePasienByID(t *testing.T) {
-	id := "667c07111601cc599e30ade2" // ID data yang ingin dihapus
-	objectID, err := primitive.ObjectIDFromHex(id)
-	if err != nil {
-		t.Fatalf("error converting id to ObjectID: %v", err)
-	}
+// func TestDeletePasienByID(t *testing.T) {
+// 	id := "667c07111601cc599e30ade2" // ID data yang ingin dihapus
+// 	objectID, err := primitive.ObjectIDFromHex(id)
+// 	if err != nil {
+// 		t.Fatalf("error converting id to ObjectID: %v", err)
+// 	}
 
-	err = module.DeletePasienByID(objectID, module.MongoConn, "pasien")
-	if err != nil {
-		t.Fatalf("error calling TestDeletePasienByID: %v", err)
-	}
+// 	err = module.DeletePasienByID(objectID, module.MongoConn, "pasien")
+// 	if err != nil {
+// 		t.Fatalf("error calling TestDeletePasienByID: %v", err)
+// 	}
 
-	_, err = module.GetPasienByID(objectID, module.MongoConn, "pasien")
-	if err == nil {
-		t.Fatalf("expected data to be deleted, but it still exists")
-	}
-}
+// 	_, err = module.GetPasienByID(objectID, module.MongoConn, "pasien")
+// 	if err == nil {
+// 		t.Fatalf("expected data to be deleted, but it still exists")
+// 	}
+// }
